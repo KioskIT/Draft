@@ -1,0 +1,553 @@
+<style type="text/css">
+.form
+{
+	position:relative;
+	width:80%;
+	box-shadow: 0 0 3px 3px #888;
+	height:70px;
+	margin:3%;
+	border-radius:10px;
+	padding:2%;
+	font-size:1.2em;
+}
+a{
+}
+.form img
+{
+	height:100%;
+	float:left;
+}
+
+#name
+{
+	position:absolute;
+	width:70%;
+	left:20%;
+	text-align:center;
+	font-weight:bold;
+	font-size:0.9em;
+	
+	
+}
+
+#desc
+{
+	position:absolute;
+	width:70%;
+	left:20%;
+	top:35%;
+	font-size:0.8em;
+}
+
+.form:hover
+{
+	background:#FFFCCC;
+}
+
+#form_content a
+{
+	text-decoration:none;
+
+}
+
+.divider
+{
+	background:#1B4971;
+	color:white;
+	padding:0.3%;
+	font-weight:bold;
+	border-top-right-radius:10px;
+	border-top-left-radius:10px;
+	font-size:0.9em;
+	margin-top:4%;
+}
+
+.button
+{
+	display:inline-block;
+	border:2px solid #1E3243;
+	background:#9CBAD4;
+	color:#1B4971;
+	padding:0.3%;
+	padding-right:1%;
+	padding-left:1%;
+	margin:0.5%;
+	margin-right:2%;
+	margin-left:2%;
+	cursor:pointer;
+	border-radius:5px;
+	font-weight:bold;
+	width:13px;
+
+}
+.forms
+{
+	padding:1%;
+}
+</style>
+<script>
+ function showContacts(contactName,button){
+	var contactList = document.getElementById(contactName).style.display;
+	if(contactList == 'block')
+	{
+		document.getElementById(contactName).style.display = 'none';
+		document.getElementById(button).innerHTML = '+';
+	}else{
+		document.getElementById(contactName).style.display = 'block';
+		document.getElementById(button).innerHTML = '-';
+	}
+ }
+</script>
+<div id = 'form_content'>
+<?php
+	function echoForm($isPDF,$document,$name,$desc){
+		if($isPDF == true)
+		{
+			$img = '../webpage/images/pdf.png';
+		}else{
+			$img = '../webpage/images/word.png';
+		}
+		echo "
+		<a href = '../webpage/docs/$document'><div class = 'form'>
+			<img src =  '$img' style = 'border:none'/>
+			<div id = 'name'>
+				$name
+			</div>
+			<div id = 'desc'>
+				$desc
+			</div>
+		</div></a>";
+	}
+?>
+	<div class = 'divider'>
+		<div class = 'button' id = 'aButton' onClick = 'showContacts("aContent","aButton")' > + </div> 
+		PELAJAR-PELAJAR YANG BARU MENERIMA ANUGERAH BIASISWA 
+	</div>
+	<div class = 'forms' id = 'aContent' style = 'display:none'>
+		<ol>
+			<li>Semua pelajar yang baru menerima anugerah biasiswa adalah dikehendaki melapor diri ke Unit Penuntut-Penuntut (UPP)</li>
+			<li>
+				Pelajar-pelajar perlu menyerahkan kepada UPP perkara-perkara yang berikut, iaitu: 
+				<ul>
+					<li>Salinan pasport (muka surat yang menunjukkan keterangan diri dan gambar)</li>
+					<li>Salinan visa</li>
+					<li>Salinan surat penerimaan anugerah biasiswa</li>
+					<li>Salinan surat penerimaan daripada institusi pengajian masing-masing (acceptance letter)</li>
+					<li>Dua (2) keping gambar ukuran pasport (tulis nama masing-masing di belakang gambar)</li>
+					<li>Salinan baucer (voucher) pembayaran elaun yang telah diterima</li>
+				</ul>
+			</li>
+		<li>Setiap pelajar yang baru menerima biasiswa perlu menerima taklimat mengenai peraturan-peraturan dan perkara-perkara yang penting untuk diketahui oleh pelajar daripada pegawai/pegawai-pegawai UPP. Risalah-risalah yang berisi maklumat-maklumat penting dan borang-borang juga akan diberikan kepada pelajar. Jika pelajar tidak menerimanya, pelajar hendaklah memaklumkannya kepada pihak UPP</li>
+		<li>
+			Pelajar-pelajar baru akan diberikan perkara-perkara yang berikut, iaitu: 
+			<ul>
+				<li>
+					<h2>Academic Status Form</h2>
+						Borang ASF1 perlu dilengkapkan dan MESTI dikembalikan ke UPP dengan segera bagi mengelakkan pelajar menghadapi kesulitan di masa hadapan nanti.  					
+				</li>
+				<li>
+					<h2>Financial Guarantee Letter (FGL)</h2>
+					<ul>
+						FGL untuk pembayaran yuran pengajian: FGL ini adalah untuk diberikan kepada pihak yang bertanggungjawab dengan pembayaran yuran pengajian (finance department) di tempat pengajian masing-masing.  
+						<br/> 
+						FGL untuk membuka akaun bank: FGL ini perlu dibawa bersama dan ditunjukkan kepada pihak bank semasa membuka akaun bank
+					</ul>
+				</li>
+				<li>
+					<h2>Letter of Consent</h2>
+						<ul>
+						Pelajar dikehendaki melengkapkan dua (2) salinan "Letter of Consent". Satu salinan diserahkan kepada UPP dan satu salinan diberikan kepada pihak universiti. 
+						</ul>
+				</li>
+				<li>
+					<h2>Kad Pelajar UPP</h2>
+						<ul>
+						Kad ini sangat penting dan perlu disimpan serta sentiasa dibawa bersama pelajar. Pelajar juga mesti sentiasa ingat nombor rujukan masing-masing. Nombor rujukan itu hendaklah sentiasa digunakan semasa berurusan dengan pihak UPP. Pelajar yang tidak mempunyai kad pelajar UPP hendaklah memaklumkan UPP supaya pihak UPP dapat membuat kad pelajar tersebut dengan segera
+						</ul>
+				</li>
+			</ul>
+		</li>
+		<li>
+			Tambang perjalanan pelajar baru dari Brunei Hall ke tempat pengajian boleh dituntut dengan menghadapkan borang Lampiran A dan Lampiran B dan menyertakan resit asal pembayaran tambang. Lampiran A dan Lampiran B boleh didapati di laman web UPP
+		</li>
+		</ol>
+	</div>
+	
+	<div class = 'divider'>
+		<div class = 'button' id = 'bButton' onClick = 'showContacts("bContent","bButton")' > + </div> 
+		MEMBUKA AKAUN BANK 
+	</div>
+	<div class = 'forms' id = 'bContent' style = 'display:none'>
+		Semua pelajar dikehendaki membuka akaun bank masing-masing. Perkara-perkara yang mesti diambil perhatian apabila membuka akaun adalah seperti berikut: 
+		<ul>
+			<li>Nama dan alamat penuh bank berkenaan.</li>  
+			<li>Nama pelajar yang akan digunakan di bank (contoh: Miss S N K Mohamed bagi nama Siti Noor Khadijah Haji Mohamed )</li>  
+			<li>Nombor akaun.</li>  
+			<li>Sort Code Bank.</li> 
+		</ul>
+		Semua perkara yang tersebut di atas hendaklah diambil perhatian serius dan diteliti semasa mengisi borang "Academic Status Form (ASF1)". Menghadapkan borang ASF1 tanpa maklumat bank atau memberi maklumat yang salah, akan menyebabkan kelambatan urusan pembayaran elaun-elaun ataupun tuntutan seseorang pelajar itu.  
+	</div>
+	
+	<div class = 'divider'>
+		<div class = 'button' id = 'cButton' onClick = 'showContacts("cContent","cButton")' > + </div> 
+		KESELAMATAN  
+	</div>
+	<div class = 'forms' id = 'cContent' style = 'display:none'>
+		Perkara-perkara yang perlu diambil perhatian terhadap keselamatan diri dan harta benda adalah seperti berikut:
+			<ol>
+				<li>Elakkan daripada berada/berjalan di tempat-tempat yang sunyi dan gelap.</li>
+				<li>
+					Jangan membawa wang tunai dalam jumlah yang banyak. Memadai untuk perbelanjaan tambang kenderaan dan perbelanjaan rutin sahaja. Bagi perbelanjaan di gedung-gedung besar, pelajar hendaklah menggunakan "debit card" atau "credit card" sahaja.
+					<br/>
+					<br/>
+					<b>PERINGATAN: Pelajar-pelajar adalah dinasihatkan untuk sentiasa berjimat-cermat dan jangan boros berbelanja.</b>  
+					<br/>
+					<br/>
+				</li> 
+				<li>Wang tunai, "debit card, credit card" ataupun apa juga barang yang berharga hendaklah disimpan di tempat-tempat yang selamat. Jangan mendedahkan nombor PIN (Personal Identification Number) kepada sesiapapun, walaupun kawan rapat. Jika kad debit ditiru dan wang pelajar digunakan/dibelanjakan oleh orang lain, pelajar hendaklah dengan segera memaklumkannya kepada pihak bank dan membuat laporan kepada pihak polis. Lazimnya jika terbukti bahawa kad debit itu ditiru dan wang itu dikeluarkan/dibelanjakan oleh orang lain, maka pihak bank akan mengganti wang tersebut.  
+					<br/>
+					<br/>
+					<b>PERINGATAN: Pelajar-pelajar juga tidak digalakkan membawa/memakai barang-barang perhiasan yang berharga, seperti barang perhiasan emas.</b>
+					<br/>
+					<br/>
+				</li>
+				<li>
+					Semasa memilih tempat tinggal, hendaklah berhati-hati dan berwaspada. Pilihlah tempat yang selamat dan bukannya tempat yang dipanggil "rough area". Minta nasihat kawan-kawan/keluarga jika mereka kebetulan atau pernah menuntut di tempat yang sama bagi memilih kawasan-kawasan yang sesuai dan selamat. 
+				</li>
+				<li>Sebelum keluar dari rumah pastikan semua pintu dan tingkap sudah dikunci dengan baik.</li>
+				<li>Jika berlaku sesuatu yang membahayakan sila hubung pihak-pihak yang berkenaan di bawah ini dengan segera: 
+					<ol>
+						<li>Pihak polis atau kawan-kawan yang berdekatan</li>  
+						<li>Pegawai UPP. Oleh sebab itu, simpan nombor telefon semua pegawai UPP di dalam telefon masing-masing.</li>
+					</ol> 
+				</li>
+				<li>
+					Jika berjalan-jalan, membeli-belah atau melawat-lawat ke tempat yang menarik, elakkan pergi secara berseorangan. Pastikan beg tangan dan/atau beg duit awda disimpan dalam keadaan selamat. Bagi pelajar perempuan yang sentiasa membawa beg tangan dinasihatkan membawa beg tersebut di hadapan badan dengan zip atau penutupnya di sebelah dalam.  
+				</li>
+				<li>
+					Pelajar-pelajar ditegah sama sekali terlibat dengan aktiviti-aktiviti tunjuk perasaan/demonstrasi dan yang seumpamanya. Pelajar-pelajar juga perlu mengelakkan diri dari kawasan tunjuk perasaan/demontstrasi diadakan. Di samping itu, jika didapati terlibat, pelajar-pelajar akan dikenakan/diambil tindakan mengikut peraturan yang yang ada. 
+				</li>
+			</ol>	
+	</div>
+	
+	<div class = 'divider'>
+		<div class = 'button' id = 'dButton' onClick = 'showContacts("dContent","dButton")' > + </div> 
+		PASPORT/VISA/KAD PENGENALAN  
+	</div>
+	<div class = 'forms' id = 'dContent' style = 'display:none'>
+		<ul>
+			<li>
+				Sentiasa memastikan pasport dan visa masih sah untuk digunakan sepanjang berada di United Kingdom. 
+			</li>
+			<li>
+				Pasport adalah merupakan salah satu dokumen yang penting. Oleh sebab itu, simpan pasport di tempat yang selamat. Jika pasport hilang, sila laporkan dengan segera kepada pihak polis yang berdekatan. 
+			</li>
+			<li>
+				Pelajar juga dikehendaki menghubungi dan melaporkan mengenai kehilangan tersebut ke UPP dengan menyertakan sama laporan pihak polis berkenaan. Pegawai UPP yang berkenaan akan memberikan nasihat bagi urusan mendapatkan Sijil Dharurat.  
+				<br/>
+				<br/>
+				<b> 
+				PERINGATAN:  Pasport yang hilang tidak akan diganti dengan pasport yang baru. Pelajar akan diminta untuk mengisikan borang untuk memohon Sijil Dharurat. Sijil Dharurat adalah "Emergency Passport" yang sah digunakan bagi perjalanan satu hala dari United Kingdom ke Brunei Darussalam tanpa membuat persinggahan ke negara-negara lain. Sijil Dharurat hanya sah bagi tempoh 6 bulan sahaja dari tarikh sijil dikeluarkan. Pelajar hendaklah menghadapkan permohonan yang baru bagi menggantikan pasport yang telah hilang setelah pelajar  berada di tanah air.  
+				</b>
+				<br/>
+				<br/>
+			</li>
+			<li>
+				Jika pasport pelajar akan mansuh, pelajar hendaklah menghubungi pihak UPP dengan segera bagi mendapatkan nasihat mengenainya. Permohonan bagi menggantikan pasport yang baru hendaklah dibuat sekurang-kurangnya 3 bulan sebelum mansuh. 
+			</li>
+			<li>
+				Para pelajar dinasihatkan untuk menghubungi pihak universiti yang menguruskan hal ehwal pelajar antarabangsa bagi mendapatkan nasihat tentang tatacara permohonan visa yang baru. Pihak universiti memegang kuasa besar di dalam menentukan pelajar memperolehi visa atau sebaliknya. Oleh sebab itu, pelajar hendaklah sentiasa merujuk kepada pihak universiti. Permohonan untuk memperbaharui visa hendaklah dibuat sebulan sebelum tempoh visa mansuh. Manakala pihak UPP, sebagai sponsor, akan mengeluarkan FGL / surat visa bagi menyokong permohonan pelajar tersebut. 
+			</li>
+				Sila juga rujuk UK Border Agency (<a href = 'http://ukba.homeoffice.gov.u'>http://ukba.homeoffice.gov.uk</a>) untuk maklumat lanjut dan borang bersesuaian yang perlu diisi.  
+			<li>
+			<li>
+				Kad pengenalan dan dokumen seperti surat beranak  asal TIDAK perlu dibawa bersama ke UK. Memadai salinan kad pengenalan sahaja yang dibawa dan disimpan di dalam beg duit. 
+			</li>
+		</ul>
+	</div>
+	
+	<div class = 'divider'>
+		<div class = 'button' id = 'eButton' onClick = 'showContacts("eContent","eButton")' > + </div> 
+		BORANG ASF2 (ACADEMIC STATUS FORM 2) 
+	</div>
+	<div class = 'forms' id = 'eContent' style = 'display:none'>
+		Borang ASF2 adalah borang yang mesti dilengkapkan sebaik-baik sahaja pelajar menerima/mengetahui keputusan peperiksaan akhir bagi tahun pengajian mereka (kecuali tahun akhir).  
+		<br/>
+		<br/> 
+		Borang ASF2 hendaklah dikembalikan kepada UPP dengan segera dan hendaklah disertakan dengan keputusan peperiksaan yang sah. Jika borang ASF2 yang dihadapkan tidak lengkap, maka pelajar akan menghadapi masalah pembayaran elaun untuk sesi pengajian yang berikutnya kerana pihak UPP tidak akan membayar elaun pelajar yang belum pasti akan statusnya, iaitu sama ada pelajar itu telah berjaya atau tidak untuk meneruskan pengajiannya pada sesi pengajian tahun yang berikutnya. 
+	</div>
+
+	<div class = 'divider'>
+		<div class = 'button' id = 'fButton' onClick = 'showContacts("fContent","fButton")' > + </div>
+		MENDUDUKI PEPERIKSAAN ULANGAN (RESIT) / MENGULANG 		
+	</div>
+	<div class = 'forms' id = 'fContent' style = 'display:none'>
+		<ol>
+			<li>
+				Jika pelajar terpaksa menduduki peperiksaan ulangan (resit) atau mengulang, maka pelajar mestilah: 
+			<ol>
+				<li>Menandakan/melengkapkan ruangan khas untuk resit / mengulang di dalam borang ASF2.</li>
+				<li>
+					Memohon kebenaran dengan segera untuk menduduki peperiksaan ulangan (resit) / mengulang kepada Pengarah Pengajian, UPP. Permohonan hendaklah mengandungi perkara-perkara yang berikut: 
+					<ul>
+						<li>
+							Surat permohonan pelajar, yang mengandungi nama/tajuk modul/subjek peperiksaan ulangan, tarikh peperiksaan ulangan tersebut dan tempat menduduki peperiksaan itu. 
+						</li>
+						<li>
+							Surat pengesahan / kebenaran universiti yang membenarkan pelajar menduduki peperiksaan ulangan (resit) / mengulang serta makluman/terma mengenai peperiksaan ulangan / mengulang tersebut. 
+						</li>
+					</ul>
+				</li>
+			</ol>
+			</li> 
+			<li>
+				Manakala bagi pelajar-pelajar akhir tahun (termasuk pelajar peringkat lepasan ijazah), mereka perlu memohon kebenaran untuk menduduki peperiksaan ulangan (resit) / mengulang kepada Pengarah Pengajian, UPP. Permohonan hendaklah mengandungi perkara-perkara yang berikut: 
+				<ul>
+					<li>
+					Surat permohonan pelajar, yang mengandungi nama/tajuk modul/subjek peperiksaan ulangan, tarikh peperiksaan ulangan tersebut dan tempat menduduki peperiksaan itu. 
+					</li>
+					<li>
+					Surat pengesahan / kebenaran universiti yang membenarkan pelajar menduduki peperiksaan ulangan (resit) / mengulang serta makluman/terma mengenai peperiksaan ulangan / mengulang tersebut. 
+					</li>
+				</ul>
+			</li>
+			<li>
+				Sekiranya pelajar ingin menduduki peperiksaan ulangan di tanahair, maka pelajar hendaklah: 
+				<ul> 
+					<li>
+						Memohon kebenaran daripada universiti untuk menduduki peperiksaan tersebut di tanahair. 
+					</li>
+					<li>
+						Menguruskan sendiri urusan peperiksaan itu, termasuk membayar sendiri kos penghantaran kertas soalan dan kos tempat peperiksaan. Kos penghantaran kertas soalan dan kos tempat peperiksaan adalah ditanggung sendiri oleh pelajar dan tidak boleh dituntut semula pembayarannya. Hanya yuran peperiksaan ulangan (resit fees) yang akan ditanggung oleh Kerajaan, tertakluk kepada kebenaran daripada Kementerian Pendidikan. 
+					</li>
+					<li>
+						Memaklumkan kepada pihak universiti untuk menghantar invois yuran peperiksaan ulangan (resit) tersebut kepada UPP. Ini kerana pada kelazimannya pihak universiti tidak menghantar invois tersebut kepada Unit ini. 
+					</li>
+					<li>
+						Jika pelajar membayar sendiri yuran peperiksaan ulangan (resit fees) itu terlebih dahulu, maka pelajar boleh menuntut pembayaran itu, tertakluk kepada kebenaran Kementerian Pendidikan. Tatacara tuntutan adalah sama seperti tuntutan-tuntutan yang lain. 
+					</li>
+				</ul>
+			</li>
+		<li>
+			Setelah pelajar menerima keputusan peperiksaan ulangan (resit), pelajar hendaklah menghantar semula ASF2 dan keputusan peperiksaan ulangan tersebut kepada Unit ini dengan segera. Pelajar yang tidak menghantar keputusan peperiksaan akan menghadapi kemungkinan tidak menerima elaun tahunan, iaitu elaun buku, elaun pakaian dan elaun peralatan. Ini kerana pihak UPP tidak mengetahui kedudukan/status pelajar tersebut, sama ada lulus atau sebaliknya. 
+		</li>
+		<br/>
+		<br/>
+		<b>
+			PERINGATAN: Jika berasa ragu mengenai peperiksaan ulangan (resit) / mengulang itu, pelajar-pelajar hendaklah dengan serta-merta menghubungi pihak UPP, iaitu Pegawai Penyelaras Akademik (emel: ac@upp.org.uk) bagi mendapatkan keterangan/nasihat lanjut mengenai kedudukan pengajian dan tempahan penerbangannya masing-masing. 
+		</b>
+		</ol>
+	</div>
+
+	<div class = 'divider'>
+		<div class = 'button' id = 'gButton' onClick = 'showContacts("gContent","gButton")' > + </div> 
+		KEMUDAHAN CUTI BIENNIAL  
+	</div>
+	<div class = 'forms' id = 'gContent' style = 'display:none'>
+		<b>Cuti Biennial</b> adalah hak atau kemudahan tambang 2 hala; pergi/balik ke Brunei Darussalam, yang diberikan kepada pelajar-pelajar yang telah genap dua (2) tahun menuntut di United Kingdom dan Eire.  
+		Pelajar-pelajar juga diberikan hak / kemudahan untuk: 
+		<ol>
+			<li>
+				Tambang perjalanan pelajar-pelajar pergi dan balik dari/ke tempat tinggal ke/dari Lapangan Terbang Heathrow. Walau bagaimanapun, pelajar-pelajar yang menggunakan penerbangan dari tempat tinggal ke Lapangan Terbang Heathrow tidak lagi dibenarkan untuk membuat tuntutan tambang perjalanan dari Lapangan Terbang Heathrow ke Brunei Hall, sebaliknya boleh menuntut tambang perjalanan dari tempat tinggal ke lapangan terbang di tempat mereka bertolak ke Lapangan Terbang Heathrow.  
+			</li>
+			<li>
+				Membuat tempahan penerbangan melalui pihak UPP dengan melengkapkan Borang Tempahan Penerbangan yang telah disediakan di laman web UPP dan menghadapkannya kepada Pengarah Pengajian, UPP. Tempahan perlu disertakan dengan borang ERB, yang boleh didapati di dalam laman web UPP. 
+			</li>
+			<li>
+				Pelajar yang membeli tiket penerbangan sendiri hendaklah menuntut bayaran balik tambang tersebut dengan segera pada tahun sepatutnya pelajar tersebut mendapat kemudahan tambang cuti biennial itu juga. Contohnya, jika pelajar berhak mendapat kemudahan cuti biennial pada tahun 2012, maka tuntutan hendaklah dihadapkan tidak lewat daripada 31 Disember 2012.  
+			</li>
+			<li>
+				<ul>
+					<li>Tiket penerbangan.</li> 
+					<li>Resit pembayaran / penyata bank (bank statement)</li> 
+					<li>
+						Jika tiket dibeli oleh ibu/bapa, maka pelajar hendaklah menyertakan surat kebenaran/pengesahan ibu/bapa yang mengesahkan telah membeli tiket tersebut dan kebenaran bagi tuntutan itu dibayar kepada pelajar (anak) mereka.
+					</li>
+					<li>
+						Boarding pass (jika ada). 			
+					</li>
+				</ul>
+			</li>
+		</ol>
+		<b>
+			PERINGATAN: Pelajar-pelajar adalah tidak dibenarkan balik sebelum keputusan peperiksaan dikeluarkan atau diketahui oleh pelajar. Jika pelajar ingin pulang sebelum keputusan peperiksaan diketahui, maka pelajar perlu menulis surat pengakuan akan bertanggungjawab di atas sebarang perbelanjaan jika mereka dikehendaki menduduki semula peperiksaan atau resit. Tiket bagi tempahan yang tidak ada surat pengakuan tidak akan dikeluarkan sehingga pelajar menghadapkan surat pengakuan tersebut. 
+		</b>
+	</div>
+
+	<div class = 'divider'>
+		<div class = 'button' id = 'hButton' onClick = 'showContacts("hContent","hButton")' > + </div> 
+		TAMAT PENGAJIAN (PELAJAR TAHUN AKHIR) 
+	</div>
+	<div class = 'forms' id = 'hContent' style = 'display:none'>
+		<ol>
+			<li>Melapor diri: 
+			<ul>
+				<li> 
+				Pelajar-pelajar yang lulus/tamat pengajian hendaklah melapor diri di UPP bagi membolehkan pihak Bahagian Kewangan, UPP memastikan semua urusan elaun dan tuntutan dapat diselesaikan sebelum pulang ke tanah air. Tambang perjalanan untuk melapor diri tersebut boleh dituntut dengan menggunakan borang tuntutan yang sedia ada dan menyertakan resit asal atau penyata bank (bank statement). 
+				</li>
+				<li>
+				Pelajar perlu merujuk makluman di laman web UPP mengenai perkara-perkara yang perlu dibuat sebelum melapor diri di UPP. Antaranya, memastikan jadual bagi hari dan jam untuk melapor diri di UPP dan melengkapkan borang-borang yang diperlukan semasa melapor diri itu. 
+				</li>
+			</ul>
+			<li>Pelajar-pelajar yang telah lulus dan menamatkan pengajian di United Kingdom dan Eire adalah berhak menerima kemudahan-kemudahan/elaun seperti yang berikut:  
+				<ul>
+					<li>
+					Tambang satu hala ke Brunei Darussalam dan berhak menuntut tambang perjalanan dari tempat tinggal ke Lapangan Terbang Heathrow. 
+					</li>
+					<li>
+						Penghantaran barang-barang persendirian ke Negara Brunei Darussalam dengan jumlah isipadu (volume) 40 kaki padu (cubic feet) bersamaan dengan 1.13 meter padu maksimum. Jika pelajar membuat penghantaran yang melebihi had jumlah itu, pelajar adalah bertanggungjawab untuk membayar lebihan  itu sendiri kepada pihak agen penghantaran yang telah dipertanggungjawabkan oleh pihak Kerajaan. 
+					</li>
+				</ul>
+				<br/>
+				<br/>
+					<b>
+					Peringatan: Kemudahan ini hendaklah digunakan pada tahun pelajar itu tamat. Kemudahan ini tidak boleh ditangguhkan atau dihimpunkan ke tahun yang berikutnya. Contohnya, jika pelajar tamat pada tahun 2012, maka tarikh penghantaran barang itu hendaklah dihadapkan tidak lewat daripada 31 Disember 2012. 
+					</b>
+				<br/>
+				<br/>
+			</li>
+			<li>
+				Elaun disertasi/projek dengan syarat semua tuntutan hendaklah disertakan dengan resit asal/penyata bank (bank statement), dan satu salinan disertasi/projek hendaklah dihadapkan ke UPP. Salinan projek atau disertasi boleh dihadapkan di dalam bentuk cakera padat (CD). 
+			 </li>
+			 <li>
+				Perbelanjaan pembelian/penyewaan jubah graduan. 
+			 </li>
+			<li>
+				Elaun "Lawatan Pendidikan (Educational Trip)" dengan menghadapkan surat permohonan yang menyatakan tempat/tempat-tempat lawatan tersebut.   
+			</li>
+		</ol>
+		<b>
+			PERINGATAN:  Tuntutan-tuntutan bagi perkara iii, iv dan v, hanya akan dibayar setelah pelajar lulus di dalam pengajian masing-masing. Oleh sebab itu, tuntutan tersebut hendaklah dihadapkan bersama keputusan peperiksaan atau sijil kelulusan pelajar. Tuntutan-tuntutan hendaklah menggunakan Lampiran A dan Lampiran C. 
+		</b>
+	</div>
+
+	<div class = 'divider'>
+		<div class = 'button' id = 'iButton' onClick = 'showContacts("iContent","iButton")' > + </div> 
+		KERJA LAPANGAN WAJIB (COMPULSORY FIELD TRIP)  
+	</div>
+	<div class = 'forms' id = 'iContent' style = 'display:none'>
+		<ol>
+			<li>
+			Setiap pelajar yang akan mengikuti kerja lapangan wajib (compulsory field trip) adalah dikehendaki:-  
+			<ul>
+				<li>
+					Mendapatkan kebenaran bertulis terlebih dahulu dengan menghadapkan permohonan secara bertulis kepada Pengarah Pengajian, UPP dengan memaklumkan tarikh kerja lapangan wajib itu akan dijalankan.  
+				</li>
+				<li>
+					Menghadapkan permohonan berkenaan sekurang-kurangnya dua bulan sebelum latihan atau penempatan bermula.  
+				</li>
+				<li> 
+					Setiap permohonan hendaklah disertakan dengan surat pengesahan/sokongan dan keterangan lengkap dari pihak universiti mengenai kursus / latihan / kerja lapangan / lawatan yang hendak diikuti, di samping menyatakan perincian jumlah perbelanjaannya dan lain-lain keterangan yang berkaitan.  
+				</li>
+			</ul>
+			</li>
+			<li>
+				Pelajar-pelajar juga boleh membayar terlebih dahulu perbelanjaan untuk perkara-perkara yang tersebut di atas dan menuntut semula perbelanjaan itu kemudian. Pelajar hendaklah menghadapkan tuntutan dengan menggunakan Lampiran A dan Lampiran B. Tuntutan hendaklah disokong dengan surat pengesahan pihak universiti tentang  keperluan kerja lapangan itu bagi kursus yang sedang diikuti, perincian / invois perbelanjaan dan resit asal pembayaran / penyata bank (bank statement). 
+			</li>
+		</ol>
+	</div>
+
+	<div class = 'divider'>
+		<div class = 'button' id = 'mButton' onClick = 'showContacts("mContent","mButton")' > + </div> 
+			LATIHAN PENEMPATAN / LATIHAN INDUSTRI ATAU LATIHAN-LATIHAN YANG SEBANDING DENGANNYA / MENJALANI KAJIAN ATAU PENYELIDIKAN DI TANAHAIR ATAU NEGARA-NEGARA LAIN/ LATIHAN PENEMPATAN KLINIKAL & LATIHAN ELEKTIF ATAU LATIHAN-LATIHAN YANG SEBANDING DENGANNYA KERJA (PELAJAR PERUBATAN SAHAJA)  
+	</div>
+	<div class = 'forms' id = 'mContent' style = 'display:none'>
+		<ol>
+			<li>
+				Setiap pelajar yang akan mengikuti kerja lapangan wajib (compulsory field trip) adalah dikehendaki:-  
+				<ul>
+					<li>
+						 Mendapatkan kebenaran bertulis terlebih dahulu dengan menghadapkan permohonan secara bertulis kepada Pengarah Pengajian, UPP dengan memaklumkan tarikh kerja lapangan wajib itu akan dijalankan.  
+					</li>
+					<li>
+						Menghadapkan permohonan berkenaan sekurang-kurangnya dua bulan sebelum latihan atau penempatan bermula.  
+					</li>
+					<li> 
+						Setiap permohonan hendaklah disertakan dengan surat pengesahan/sokongan dan keterangan lengkap dari pihak universiti mengenai kursus / latihan / kerja lapangan / lawatan yang hendak diikuti, di samping menyatakan perincian jumlah perbelanjaannya dan lain-lain keterangan yang berkaitan.  
+					</li>
+				</ul>
+			</li>
+			<li>
+				Pelajar-pelajar juga boleh membayar terlebih dahulu perbelanjaan untuk perkara-perkara yang tersebut di atas dan menuntut semula perbelanjaan itu kemudian. Pelajar hendaklah menghadapkan tuntutan dengan menggunakan Lampiran A dan Lampiran B. Tuntutan hendaklah disokong dengan surat pengesahan pihak universiti tentang  keperluan kerja lapangan itu bagi kursus yang sedang diikuti, perincian / invois perbelanjaan dan resit asal pembayaran / penyata bank (bank statement). 
+			</li>
+		</ol>
+	</div>
+	
+	<div class = 'divider'>
+		<div class = 'button' id = 'jButton' onClick = 'showContacts("jContent","jButton")' > + </div>
+		PEMBIAYAAN BAGI MENJALANKAN KAJIAN / PENYELIDIKAN BAGI PELAJAR-PELAJAR LEPASAN IJAZAH (SARJANA DAN PHD) 
+	</div>
+	
+	<div class = 'forms' id = 'jContent' style = 'display:none'>
+		Pelajar-pelajar yang sedang mengikuti pengajian lepasan ijazah (sarjana dan PhD) yang berhasrat untuk membuat kajian / penyelidikan di tanahair atau di negara-negara yang lain, hendaklah memastikan mereka mengikuti tata cara yang berikut, iaitu: 
+		<ol>
+			<li>
+				Memohon kebenaran daripada pihak-pihak tempat pelajar itu akan menjalani kajian / penyelidikan tersebut. Permohonan hendaklah dihadapkan kepada Pengarah Pengajian, UPP dan hendaklah disertakan dengan surat pengesahan dan sokongan tentang keperluan kajian tersebut daripada pihak universiti. 
+			</li>
+			<li>
+				Setelah pelajar mendapat kebenaran daripada pihak tempat pelajar akan menjalankan kajian / penyelidikan itu, pelajar boleh menghadapkan permohonan bagi mendapatkan pembiayaan tambang bagi membuat kajian / penyelidikan dengan menghadapkan perkara-perkara yang berikut, iaitu: 
+					<ol>
+						<li>Surat permohonan</li> 
+						<li>Surat pengesahan dan sokongan daripada pihak universiti</li>
+					</ol> 
+			</li>
+			<li>
+				Surat kebenaran menjalani kajian / penyelidikan daripada tempat pelajar akan menjalani kajian / penyelidikan itu 
+			</li>
+			<li>
+				Sinopsis atau metodologi kajian / penyelidikan (termasuk questionnaires) 
+			</li>
+			<li> 
+				Surat permohonan hendaklah dihadapkan kepada Pengarah Pengajian, UPP sekurang-kurangnya dua(2) bulan sebelum tarikh penerbangan. 
+			</li>
+			<li> 
+				Pelajar yang telah mendapat kebenaran daripada Kementerian Pendidikan boleh menghadapkan tuntutan untuk mendapatkan pembayaran balik tambang penerbangan itu dengan melengkapkan borang Lampiran A dan Lampiran B dan disertakan dengan salinan surat kebenaran daripada Kementerian Pendidikan dan semua resit asal atau penyata bank bagi perbelanjaan yang dituntut itu. 
+			</li>
+		</ol>
+		<br/>
+		<b> 
+		PERINGATAN: Pihak UPP hanya akan memproses permohonan atau permohonan tuntutan balik pembiayaan bagi yang telah mendapat kebenaran daripada pihak Kementerian Pendidikan sahaja. 
+		</b>
+	</div>
+
+
+	<div class = 'divider'>
+		<div class = 'button' id = 'lButton' onClick = 'showContacts("lContent","lButton")' > + </div>
+		KETERANGAN/MAKLUMAT UMUM
+	</div>
+	<div class = 'forms' id = 'lContent' style = 'display:none'>
+		<ol>
+			<li>
+				Setiap surat menyurat atau email yang ditujukan kepada Pengarah Pengajian, UPP dan pegawaipegawai UPP hendaklah menggunakan nama penuh dan menyatakan nombor rujukan UPP, iaitu seperti yang terdapat di dalam kad pelajar UPP.  
+			</li>
+			<li>
+				Setiap tuntutan perbelanjaan hendaklah menggunakan borang LAMPIRAN A dan LAMPIRAN B / LAMPIRAN C (untuk pelajar tahun akhir) dan disertakan dengan resit asal atau penyata bank. 
+			</li>
+			<li>
+				Setiap pertukaran alamat dan nombor telefon hendaklah dimaklumkan ke UPP. Bagi petukaran alamat, Sila gunakan borang Petukaran Alamat dan hantar ke UPP dengan segera. 
+			</li>
+			<li>
+				Pertukaran Bank dan Nombor Akaun juga hendaklah dimaklumkan ke UPP dengan menggunakan borang Pertukaran Akaun.  
+			</li> 
+			<li>
+				Setiap pelajar hendaklah peka mengenai kadar elaun yang sepatutnya diterima pada setiap awal bulan. Jika terjadi terlebih bayar ataupun terkurang bayar kerana kesilapan pihak UPP ataupun pihak Bank (Centre File) yang tidak disengajakan, maka pelajar berkenan hendaklah melaporkan ke UPP dengan secepat mungkin bagi membolehkan pihak UPP membuat pembetulan.  
+			</li>
+			<li>
+				Setiap pelajar dikehendaki menghubungi UPP apabila menghadapi sebarang masalah termasuk masalah peribadi, akademik, kesihatan ataupun masalah lain yang boleh mengakibatkan kemerosotan pelajaran. Unit Penuntut-Penuntut, insya-Allah akan sedaya upaya membantu pelajar-pelajar mengatasinya. Jangan tunggu masalah menjadi lebih besar dan memudaratkan pelajar hingga menyukarkan pihak UPP membantu. 
+			</li>
+			<li>
+				Elakkan membawa barang-barang yang menjadi tegahan untuk dibawa masuk ke UK seperti serunding daging, cornbeef, bunga-bunga hidup dan yang seumpamanya. 
+			</li>
+			<li>
+				Pelajar-pelajar yang berhasrat untuk bercuti di luar UK, hendaklah memastikan destinasi percutian itu adalah selamat untuk dikunjungi. Pastikan juga perwakilan Negara Brunei Darussalam yang bertanggungjawab terhadap negara destinasi tersebut. Pelajar adalah dikehendaki memaklumkan percutian itu kepada pihak UPP melalui email. Nyatakan tempat percutian, tarikh percutian, alamat tempat tinggal sepanjang percutian, nombor telefon yang boleh dihubungi dan senaraikan nama pelajar-pelajar Negara Brunei Darussalam yang menyertai percutian tersebut (jika ada). Demikian juga jika pelajar ingin pulang bercuti di tanahair. 
+			</li>
+			<li>
+				Pelajar-pelajar yang tinggal singgah (transit) di Brunei Hall adalah dikehendaki mematuhi peraturanperaturan yang disediakan oleh pihak Brunei Hall. Maklumat mengenai peraturan Brunei Hall boleh didapati di laman web UPP. 
+			</li>
+			<li>
+				Garis panduan ini akan sentiasa dikemas kini dari semasa ke semasa mengikut keperluan. 
+			</li>
+		</ol>
+	</div>	
+</div>
+    
